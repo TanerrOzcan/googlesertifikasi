@@ -1,0 +1,61 @@
+.x{
+   text-align: center;
+}
+.card {
+   flex: 9;
+   margin-bottom: 30px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+   
+}
+ 
+.card .post {
+   width: calc(33% - 20px);
+   border-radius: 20px;
+   padding: 15px;
+   margin-bottom: 10px;
+   border: 1px solid black;
+   transform: scale(1.05);
+}
+
+
+
+.card h1 {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card img {
+   border-radius: 10px;
+   margin-bottom: 5px;
+   object-fit: cover;
+}
+
+
+
+/* Scroll animation */
+
+.card .post {
+   transform: translateX(-20px);
+   opacity: 0;
+   transition: all 0.5s;
+}
+.card .post:nth-child(2n) {
+   transition: all 0.8s;
+}
+.card .post.active {
+   transform: translateX(0px);
+   opacity: 1;
+}
+
+
+/* Responsive area */
+@media(max-width:300px){
+   .card .post {
+      width: 100%;
+   }
+   .card .post:nth-child(2n) {
+      transition: all 0.5s;
+   }
+}
